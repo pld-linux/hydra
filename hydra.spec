@@ -1,15 +1,16 @@
 Summary:	Parallized network authentication cracker
 Summary(pl):	Zrównoleglony ³amacz uwierzytelnieñ sieciowych
 Name:		hydra
-Version:	4.1
+Version:	4.4
 Release:	0.1
 License:	GPL
 Group:		Networking
 Source0:	http://www.thc.org/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	63f1bea8ff62d296099f777d25ee842e
+# Source0-md5:	307e1434ae475088caa01e3b1aefbf43
 URL:		http://www.thc.org/thc-hydra/
 Patch0:		%{name}-nonsl.patch
 BuildRequires:	openssl-devel >= 0.9.7d
+
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,6 +22,14 @@ NNTP, VNC, ICQ, Socks5, PCNFS, and more.
 To narzêdzie pozwala na szybkie ataki s³ownikowe przeciwko sieciowym
 systemom logowania, w³±czaj±c w to FTP, POP3, IMAP, Netbios, Telnet,
 HTTP Auth, LDAP, NNTP, VNC, ICQ, Socks5, PCNFS i inne.
+
+%package xhydra
+Summary:	hydra-gtk
+Group:		Networking
+
+%description xhydra
+GTK version of hydra
+
 
 %prep
 %setup -q -n %{name}-%{version}-src
@@ -34,6 +43,7 @@ HTTP Auth, LDAP, NNTP, VNC, ICQ, Socks5, PCNFS i inne.
 rm -rf $RPM_BUILD_ROOT
 
 install -D hydra $RPM_BUILD_ROOT%{_bindir}/hydra
+install xhydra $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -41,4 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README LICENCE.HYDRA
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/%{name}
+
+%files xhydra
+%attr(755,root,root) %{_bindir}/xhydra
