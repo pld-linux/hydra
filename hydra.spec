@@ -1,13 +1,13 @@
 Summary:	Parallized network authentication cracker
-Summary(pl):	Zrównoleglony ³amasz uwierzytelnieñ sieciowych
+Summary(pl):	Zrównoleglony ³amacz uwierzytelnieñ sieciowych
 Name:		hydra
-Version:	2.2
+Version:	4.1
 Release:	0.1
 License:	GPL
 Group:		Networking
-Source0:	http://www.thc.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	05042c1add6155ea48233df05a1e37ae
-URL:		http://www.thc.org/
+Source0:	http://www.thc.org/releases/%{name}-%{version}-src.tar.gz
+# Source0-md5:	63f1bea8ff62d296099f777d25ee842e
+URL:		http://www.thc.org/thc-hydra/
 Patch0:		%{name}-nonsl.patch
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -23,7 +23,7 @@ systemom logowania, w³±czaj±c w to FTP, POP3, IMAP, Netbios, Telnet,
 HTTP Auth, LDAP, NNTP, VNC, ICQ, Socks5, PCNFS i inne.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-src
 %patch0 -p1
 
 %build
