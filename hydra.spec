@@ -1,4 +1,5 @@
 Summary:	Parallized network authentication cracker
+Summary(pl):	Zrównoleglony ³amasz uwierzytelnieñ sieciowych
 Name:		hydra
 Version:	2.2
 Release:	0.1
@@ -12,8 +13,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This tool allows for rapid dictionary attacks against network login
-systems, including FTP, POP3, IMAP, Netbios, Telnet, HTTP Auth, LDAP
+systems, including FTP, POP3, IMAP, Netbios, Telnet, HTTP Auth, LDAP,
 NNTP, VNC, ICQ, Socks5, PCNFS, and more.
+
+%description -l pl
+To narzêdzie pozwala na szybkie ataki s³ownikowe przeciwko sieciowym
+systemom logowania, w³±czaj±c w to FTP, POP3, IMAP, Netbios, Telnet,
+HTTP Auth, LDAP, NNTP, VNC, ICQ, Socks5, PCNFS i inne.
 
 %prep
 %setup -q
@@ -26,7 +32,7 @@ NNTP, VNC, ICQ, Socks5, PCNFS, and more.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -D  hydra $RPM_BUILD_ROOT%{_bindir}/hydra
+install -D hydra $RPM_BUILD_ROOT%{_bindir}/hydra
 
 %clean
 rm -rf $RPM_BUILD_ROOT
