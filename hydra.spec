@@ -9,7 +9,7 @@ Source0:	http://www.thc.org/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	05042c1add6155ea48233df05a1e37ae
 URL:		http://www.thc.org/
 Patch0:		%{name}-nonsl.patch
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.7d
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
