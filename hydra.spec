@@ -10,7 +10,7 @@ Source0:	http://www.thc.org/releases/%{name}-%{version}-src.tar.gz
 URL:		http://www.thc.org/thc-hydra/
 Patch0:		%{name}-nonsl.patch
 BuildRequires:	openssl-devel >= 0.9.7d
-
+# XXX BR: gtk+ - but which one?
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,12 +24,15 @@ systemom logowania, w³±czaj±c w to FTP, POP3, IMAP, Netbios, Telnet,
 HTTP Auth, LDAP, NNTP, VNC, ICQ, Socks5, PCNFS i inne.
 
 %package xhydra
-Summary:	hydra-gtk
+Summary:	GTK+ version of hydra
+Summary(pl):	Wersja GTK+ programu hydra
 Group:		Networking
 
 %description xhydra
-GTK version of hydra
+GTK+ version of hydra.
 
+%description xhydra -l pl
+Wersja GTK+ programu hydra.
 
 %prep
 %setup -q -n %{name}-%{version}-src
@@ -54,4 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 
 %files xhydra
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/xhydra
