@@ -6,6 +6,7 @@ Release:	0.1
 License:	GPL
 Group:		Networking
 Source0:	http://www.thc.org/releases/%{name}-%{version}.tar.gz
+# Source0-md5:	05042c1add6155ea48233df05a1e37ae
 URL:		http://www.thc.org/
 Patch0:		%{name}-nonsl.patch
 BuildRequires:	openssl-devel
