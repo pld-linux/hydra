@@ -1,0 +1,11 @@
+--- hydra-2.2/configure~	2002-02-27 22:17:54.000000000 +0000
++++ hydra-2.2/configure	2003-05-11 13:30:15.000000000 +0000
+@@ -53,7 +53,7 @@
+ $TEST -z "$SSL_IPATH" || XIPATHS="-I$SSL_IPATH"
+ $TEST -z "$SSL_PATH" || XLIBS="$XLIBS -lssl"
+ $TEST -z "$CRYPTO_PATH" || XLIBS="$XLIBS -lcrypto"
+-$TEST -z "$NSL_PATH" || XLIBS="$XLIBS -lnsl"
++#$TEST -z "$NSL_PATH" || XLIBS="$XLIBS -lnsl"
+ $TEST -z "$SOCKET_PATH" || XLIBS="$XLIBS -lsocket"
+ $TEST -z "$SSL_PATH" || XDEFINES="$XDEFINES -DHYDRA_SSL"
+ 
