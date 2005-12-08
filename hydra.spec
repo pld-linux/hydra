@@ -9,8 +9,8 @@ Source0:	http://www.thc.org/releases/%{name}-%{version}-src.tar.gz
 # Source0-md5:	04c45be0ded184d0f7e92c7a4a936f82
 URL:		http://www.thc.org/thc-hydra/
 Patch0:		%{name}-nonsl.patch
+BuildRequires:	gtk+2-devel
 BuildRequires:	openssl-devel >= 0.9.7d
-# XXX BR: gtk+ - but which one?
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,7 +40,8 @@ Wersja GTK+ programu hydra.
 
 %build
 %configure
-%{__make}
+%{__make} \
+	CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -53,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES README LICENCE.HYDRA
+%doc CHANGES LICENCE.HYDRA README TODO
 %attr(755,root,root) %{_bindir}/%{name}
 
 %files xhydra
