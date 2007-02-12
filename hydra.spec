@@ -1,5 +1,5 @@
 Summary:	Parallized network authentication cracker
-Summary(pl):	Zrównoleglony ³amacz uwierzytelnieñ sieciowych
+Summary(pl.UTF-8):   ZrÃ³wnoleglony Å‚amacz uwierzytelnieÅ„ sieciowych
 Name:		hydra
 Version:	5.3
 Release:	1
@@ -18,20 +18,20 @@ This tool allows for rapid dictionary attacks against network login
 systems, including FTP, POP3, IMAP, Netbios, Telnet, HTTP Auth, LDAP,
 NNTP, VNC, ICQ, Socks5, PCNFS, and more.
 
-%description -l pl
-To narzêdzie pozwala na szybkie ataki s³ownikowe przeciwko sieciowym
-systemom logowania, w³±czaj±c w to FTP, POP3, IMAP, Netbios, Telnet,
+%description -l pl.UTF-8
+To narzÄ™dzie pozwala na szybkie ataki sÅ‚ownikowe przeciwko sieciowym
+systemom logowania, wÅ‚Ä…czajÄ…c w to FTP, POP3, IMAP, Netbios, Telnet,
 HTTP Auth, LDAP, NNTP, VNC, ICQ, Socks5, PCNFS i inne.
 
 %package xhydra
 Summary:	GTK+ version of hydra
-Summary(pl):	Wersja GTK+ programu hydra
+Summary(pl.UTF-8):   Wersja GTK+ programu hydra
 Group:		Networking
 
 %description xhydra
 GTK+ version of hydra.
 
-%description xhydra -l pl
+%description xhydra -l pl.UTF-8
 Wersja GTK+ programu hydra.
 
 %prep
