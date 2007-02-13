@@ -1,5 +1,5 @@
 Summary:	Parallized network authentication cracker
-Summary(pl.UTF-8):   Zrównoleglony łamacz uwierzytelnień sieciowych
+Summary(pl.UTF-8):	Zrównoleglony łamacz uwierzytelnień sieciowych
 Name:		hydra
 Version:	5.3
 Release:	1
@@ -25,7 +25,7 @@ HTTP Auth, LDAP, NNTP, VNC, ICQ, Socks5, PCNFS i inne.
 
 %package xhydra
 Summary:	GTK+ version of hydra
-Summary(pl.UTF-8):   Wersja GTK+ programu hydra
+Summary(pl.UTF-8):	Wersja GTK+ programu hydra
 Group:		Networking
 
 %description xhydra
