@@ -10,12 +10,12 @@ License:	GPL
 Group:		Networking
 Source0:	http://packetstormsecurity.org/groups/thc/%{name}-%{version}-src.tar.gz
 # Source0-md5:	9c13a4909387284cebe867587be2fd98
-URL:		http://www.thc.org/thc-hydra/
 Patch0:		%{name}-nonsl.patch
+URL:		http://www.thc.org/thc-hydra/
 BuildRequires:	gtk+2-devel
+BuildRequires:	libssh-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	postgresql-devel
-BuildRequires:	libssh-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
