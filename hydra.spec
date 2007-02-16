@@ -1,8 +1,11 @@
+#
+# TODO:	- add subversion support
+#
 Summary:	Parallized network authentication cracker
 Summary(pl.UTF-8):	Zrównoleglony łamacz uwierzytelnień sieciowych
 Name:		hydra
 Version:	5.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking
 Source0:	http://packetstormsecurity.org/groups/thc/%{name}-%{version}-src.tar.gz
@@ -11,6 +14,8 @@ URL:		http://www.thc.org/thc-hydra/
 Patch0:		%{name}-nonsl.patch
 BuildRequires:	gtk+2-devel
 BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	postgresql-devel
+BuildRequires:	libssh-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,13 +46,17 @@ Wersja GTK+ programu hydra.
 %build
 %configure
 %{__make} \
-	CC="%{__cc}"
+	CC="%{__cc}" \
+	XIPATHS=" -I/usr/include/subversion-1 -I/usr/include/apr -I/usr/include/apr-util" \
+	XDEFINES=" -DLIBOPENSSL -DLIBPOSTGRES -DLIBSSH" \
+	XLIBS=" -lssl -lpq -lssh -lcrypto"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 install -D hydra $RPM_BUILD_ROOT%{_bindir}/hydra
 install xhydra $RPM_BUILD_ROOT%{_bindir}
+install pw-inspector $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -56,6 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES LICENCE.HYDRA README TODO
 %attr(755,root,root) %{_bindir}/%{name}
+%attr(755,root,root) %{_bindir}/pw-inspector
 
 %files xhydra
 %defattr(644,root,root,755)
