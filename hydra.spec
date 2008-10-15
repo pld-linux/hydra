@@ -4,16 +4,16 @@
 Summary:	Parallized network authentication cracker
 Summary(pl.UTF-8):	Zrównoleglony łamacz uwierzytelnień sieciowych
 Name:		hydra
-Version:	5.3
-Release:	2
+Version:	5.4
+Release:	1
 License:	GPL
 Group:		Networking
 Source0:	http://packetstormsecurity.org/groups/thc/%{name}-%{version}-src.tar.gz
-# Source0-md5:	9c13a4909387284cebe867587be2fd98
+# Source0-md5:	fa08b465d19321e77b1a0ef912eeecc1
 Patch0:		%{name}-nonsl.patch
 URL:		http://www.thc.org/thc-hydra/
 BuildRequires:	gtk+2-devel
-BuildRequires:	libssh-devel
+BuildRequires:	libssh2-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	postgresql-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -48,8 +48,8 @@ Wersja GTK+ programu hydra.
 %{__make} \
 	CC="%{__cc}" \
 	XIPATHS=" -I/usr/include/subversion-1 -I/usr/include/apr -I/usr/include/apr-util" \
-	XDEFINES=" -DLIBOPENSSL -DLIBPOSTGRES -DLIBSSH" \
-	XLIBS=" -lssl -lpq -lssh -lcrypto"
+	XDEFINES=" -DLIBOPENSSL -DLIBPOSTGRES -DLIBSSH2" \
+	XLIBS=" -lssl -lpq -lssh2 -lcrypto"
 
 %install
 rm -rf $RPM_BUILD_ROOT
