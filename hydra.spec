@@ -15,6 +15,7 @@ URL:		http://www.thc.org/thc-hydra/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libssh2-devel
 BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	pkgconfig
 BuildRequires:	postgresql-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
