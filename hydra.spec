@@ -4,12 +4,12 @@
 Summary:	Parallized network authentication cracker
 Summary(pl.UTF-8):	Zrównoleglony łamacz uwierzytelnień sieciowych
 Name:		hydra
-Version:	5.4
-Release:	2
+Version:	6.2
+Release:	1
 License:	GPL
 Group:		Networking
-Source0:	http://packetstormsecurity.org/groups/thc/%{name}-%{version}-src.tar.gz
-# Source0-md5:	fa08b465d19321e77b1a0ef912eeecc1
+Source0:	http://freeworld.thc.org/releases/%{name}-%{version}-src.tar.gz
+# Source0-md5:	3249cc9e30c2037c5d4dee557cb77ea5
 Patch0:		%{name}-nonsl.patch
 URL:		http://www.thc.org/thc-hydra/
 BuildRequires:	gtk+2-devel
@@ -64,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES LICENCE.HYDRA README TODO
+%doc CHANGES LICENSE README TODO
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_bindir}/pw-inspector
 
