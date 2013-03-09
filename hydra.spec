@@ -4,12 +4,12 @@
 Summary:	Parallized network authentication cracker
 Summary(pl.UTF-8):	Zrównoleglony łamacz uwierzytelnień sieciowych
 Name:		hydra
-Version:	6.2
+Version:	7.4.2
 Release:	1
 License:	GPL
 Group:		Networking
-Source0:	http://freeworld.thc.org/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	3249cc9e30c2037c5d4dee557cb77ea5
+Source0:	http://www.thc.org/releases/%{name}-%{version}.tar.gz
+# Source0-md5:	c38d9daff27ff1a46e7a31f4550fe714
 Patch0:		%{name}-nonsl.patch
 URL:		http://www.thc.org/thc-hydra/
 BuildRequires:	gtk+2-devel
@@ -41,31 +41,28 @@ GTK+ version of hydra.
 Wersja GTK+ programu hydra.
 
 %prep
-%setup -q -n %{name}-%{version}-src
+%setup -q
 %patch0 -p1
 
 %build
 %configure
 %{__make} \
-	CC="%{__cc}" \
-	XIPATHS=" -I/usr/include/subversion-1 -I/usr/include/apr -I/usr/include/apr-util" \
-	XDEFINES=" -DLIBOPENSSL -DLIBPOSTGRES -DLIBSSH2" \
-	XLIBS=" -lssl -lpq -lssh2 -lcrypto"
+	CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_bindir}
 
-install -D hydra $RPM_BUILD_ROOT%{_bindir}/hydra
-install xhydra $RPM_BUILD_ROOT%{_bindir}
-install pw-inspector $RPM_BUILD_ROOT%{_bindir}
+install dpl4hydra.sh hydra pw-inspector xhydra $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES LICENSE README TODO
-%attr(755,root,root) %{_bindir}/%{name}
+%doc CHANGES LICENSE README
+%attr(755,root,root) %{_bindir}/hydra
+%attr(755,root,root) %{_bindir}/dpl4hydra.sh
 %attr(755,root,root) %{_bindir}/pw-inspector
 
 %files xhydra
