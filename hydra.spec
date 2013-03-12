@@ -5,7 +5,7 @@ Summary:	Parallized network authentication cracker
 Summary(pl.UTF-8):	Zrównoleglony łamacz uwierzytelnień sieciowych
 Name:		hydra
 Version:	7.4.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking
 Source0:	http://www.thc.org/releases/%{name}-%{version}.tar.gz
@@ -33,6 +33,7 @@ HTTP Auth, LDAP, NNTP, VNC, ICQ, Socks5, PCNFS i inne.
 Summary:	GTK+ version of hydra
 Summary(pl.UTF-8):	Wersja GTK+ programu hydra
 Group:		Networking
+Requires:	hydra
 
 %description xhydra
 GTK+ version of hydra.
