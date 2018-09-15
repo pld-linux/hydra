@@ -5,7 +5,7 @@ Summary:	Parallized network authentication cracker
 Summary(pl.UTF-8):	Zrównoleglony łamacz uwierzytelnień sieciowych
 Name:		hydra
 Version:	7.5
-Release:	2
+Release:	3
 License:	GPL
 Group:		Networking
 Source0:	http://www.thc.org/releases/%{name}-%{version}.tar.gz
