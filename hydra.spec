@@ -8,7 +8,8 @@ Version:	8.6
 Release:	2
 License:	GPL
 Group:		Networking
-Source0:	https://github.com/vanhauser-thc/THC-Archive/blob/master/Tools/%{name}-%{version}.tar.gz?raw=true
+#Source0:	https://github.com/vanhauser-thc/THC-Archive/blob/master/Tools/%{name}-%{version}.tar.gz?raw=true
+Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	5d909cfea627a1f2482b82dfbd64956c
 Patch0:		%{name}-nonsl.patch
 URL:		http://www.thc.org/thc-hydra/
