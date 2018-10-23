@@ -1,0 +1,13 @@
+--- hydra-8.6/configure~	2018-10-23 23:42:15.000000000 +0200
++++ hydra-8.6/configure	2018-10-23 23:44:33.583059343 +0200
+@@ -131,9 +131,7 @@
+   fi
+ fi
+ LIBDIRS=`cat /etc/ld.so.conf /etc/ld.so.conf.d/* 2> /dev/null | grep -v '^#' | sort | uniq`
+-if [ "$SIXFOUR" = "64" ]; then
+-  LIBDIRS="$LIBDIRS /lib64 /usr/lib64 /usr/local/lib64 /opt/local/lib64"
+-fi
++LIBDIRS="$LIBDIRS /libx32 /usr/libx32 /usr/local/libx32 /opt/local/libx32"
+ if [ -d "/Library/Developer/CommandLineTools/usr/lib" ]; then
+   LIBDIRS="$LIBDIRS /Library/Developer/CommandLineTools/usr/lib /Library/Developer/CommandLineTools/lib"
+ fi
